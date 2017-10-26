@@ -1,0 +1,37 @@
+{
+  "name": "npm-frontend",
+  "version": "0.0.1",
+  "description": "npmでfrontendの環境構築",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
+    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
+    "mkdist": "rimraf dist/ && mkdirp dist/",
+    "cpassets": "cpx 'assets/**/*' dist/",
+    "cphtml": "cpx src/index.html dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exli3141/npm-frontend.git"
+  },
+  "author": "exli3141",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exli3141/npm-frontend/issues"
+  },
+  "homepage": "https://github.com/exli3141/npm-frontend#readme",
+  "dependencies": {
+    "babel-polyfill": "^7.0.0-beta.3"
+  },
+  "devDependencies": {
+    "babel-core": "^7.0.0-beta.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "cpx": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}
