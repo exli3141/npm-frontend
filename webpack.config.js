@@ -52,4 +52,5 @@ module.exports = {
     contentBase: path.resolve('dist'),
     watchContentBase: true
   }
-}
+};
+
