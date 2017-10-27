@@ -1,7 +1,7 @@
 import hello from 'hello';
-import world from 'world';
+import World from 'world';
 
-let helloWorld = world(hello.message);
+let helloWorld = new World(hello.message);
 
 console.log(helloWorld.message);
 

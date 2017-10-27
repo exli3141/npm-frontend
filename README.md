@@ -47,3 +47,6 @@ Vueよりシンプルな仕組みで記述できるフレームワーク。パ�
 ```
 $ npm i -g babel-eslint
 ```
+
+## パッケージを作るにあたった
+本パッケージはQiitaでお見かけした[シンプルだけどシッカリ働く最新のECMAScript開発環境](https://qiita.com/zprodev/items/9d611a482715fa64512b)の記事を参考に制作しております。
