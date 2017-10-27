@@ -18,12 +18,23 @@ module.exports = {
         options: {
           presets: [
             ['env', {
-              'targets':{
-                'node': 'current',
-                'browsers': 'last 2 versions'
+              targets: {
+                node: 'current',
+                browsers: 'last 2 versions'
               }
             }]
           ]
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'eslint-loader',
+        options: {
+          // 自動修正させる
+          fix: true,
+          // eslintでエラーだしたらビルドを中断する
+          failOnError: true,
         }
       }
     ]

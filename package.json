@@ -9,7 +9,8 @@
     "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
     "mkdist": "rimraf dist/ && mkdirp dist/",
     "cpassets": "cpx 'assets/**/*' dist/",
-    "cphtml": "cpx src/index.html dist/"
+    "cphtml": "cpx src/index.html dist/",
+    "clean": "cd dist && rm -rf * && cd .."
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,16 @@
   },
   "homepage": "https://github.com/exli3141/npm-frontend#readme",
   "dependencies": {
-    "babel-polyfill": "^7.0.0-beta.3"
+    "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-beta.3",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "cpx": "^1.5.0",
+    "eslint": "^4.9.0",
+    "eslint-loader": "^1.9.0",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
     "webpack": "^3.8.1",

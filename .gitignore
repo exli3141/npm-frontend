@@ -1,2 +1,4 @@
 # NodeModulesフォルダを無効化。
-node_modules
+node_modules/
+dist/
+
