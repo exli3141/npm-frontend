@@ -3,6 +3,6 @@ import World from 'world';
 
 let helloWorld = new World(hello.message);
 
-console.log(helloWorld.message);
+document.body.appendChild(helloWorld.message);
 
 //module importer
