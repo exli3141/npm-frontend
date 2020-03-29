@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Wed Jan 24 2018 12:57:09 GMT+0900 (東京 (標準時))
 
+var webpackConfig = require('./webpack.config.js');
+
 module.exports = (config) => {
   config.set({
 
@@ -29,7 +31,6 @@ module.exports = (config) => {
     preprocessors: {
       'test/*.js': ['webpack']
     },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -65,6 +66,8 @@ module.exports = (config) => {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    webpack: webpackConfig
   })
 }

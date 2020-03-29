@@ -1,12 +1,12 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: [
-    'babel-polyfill',
     path.resolve('src', 'index.js')
   ],
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -17,16 +17,18 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['env', {
-              targets: {
-                node: 'current',
-                browsers: 'last 2 versions'
-              }
-            }]
+              [
+                '@babel/preset-env', {
+                  'modules': false,
+                  targets: {
+                    node: 'current',
+                    browsers: 'last 2 versions'
+                  },
+                'useBuiltIns': 'usage',
+                'useBuiltIns': 'entry'
+              }]
           ]
-        }
-      },
-      {
+        },
         test: /\.js$/,
         exclude: /(node_modules)/,
         loader: 'eslint-loader',
@@ -49,7 +51,7 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
-    contentBase: path.resolve('dist'),
+    contentBase: path.resolve(__dirname, 'dist'),
     watchContentBase: true
   }
 };

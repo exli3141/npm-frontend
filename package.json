@@ -1,11 +1,11 @@
 {
   "name": "npm-frontend",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "npmでfrontendの環境構築",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/karma start",
-    "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
+    "start": "npm run mkdist && npm run cpassets && npm run cphtml && webpack-dev-server",
     "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack --optimize-minimize",
     "mkdist": "rimraf dist/ && mkdirp dist/",
     "cpassets": "cpx 'assets/**/*' dist/",
@@ -22,18 +22,18 @@
     "url": "https://github.com/exli3141/npm-frontend/issues"
   },
   "homepage": "https://github.com/exli3141/npm-frontend#readme",
-  "dependencies": {
-    "babel-polyfill": "^6.26.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.6.1",
     "cpx": "^1.5.0",
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
     "karma": "^4.4.1",
+    "karma-babel-preprocessor": "^8.0.1",
     "karma-chrome-launcher": "^3.1.0",
     "karma-cli": "^2.0.0",
     "karma-firefox-launcher": "^1.1.0",
@@ -44,6 +44,7 @@
     "mocha": "^7.1.1",
     "rimraf": "^3.0.2",
     "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   }
 }
